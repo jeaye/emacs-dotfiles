@@ -3,10 +3,12 @@
 ; Allow using C-u and C-d for scrolling
 ;(setq evil-want-C-u-scroll t)
 
+(require-package 'evil)
 (require 'evil)
 (evil-mode 1)
 
 ; Setup , as a leader
+(require-package 'evil-leader)
 (require 'evil-leader)
 (global-evil-leader-mode)
 (setq evil-leader/in-all-states 1)
@@ -16,8 +18,12 @@
 (evil-leader/set-key "x" 'execute-extended-command)
 
 ; Allow escaping of lots of things
+(require-package 'evil-escape)
 (evil-escape-mode)
 (global-set-key (kbd "<escape>") 'evil-escape)
+
+; Various tag matching
+(require-package 'evil-matchit)
 
 ; Color cursor based on mode
 (setq evil-emacs-state-cursor '("red" box))

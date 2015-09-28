@@ -1,4 +1,5 @@
 ;; Solarized
+(require-package 'color-theme-sanityinc-solarized)
 (require 'color-theme-sanityinc-solarized)
 (color-theme-sanityinc-solarized--define-theme dark)
 
