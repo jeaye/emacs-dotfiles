@@ -25,6 +25,11 @@
 ; Various tag matching
 (require-package 'evil-matchit)
 
+; C-+ C-- to increase/decrease number like Vim's C-a C-x
+(require-package 'evil-numbers)
+(define-key evil-normal-state-map (kbd "C-=") 'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map (kbd "C--") 'evil-numbers/dec-at-pt)
+
 ; Color cursor based on mode
 (setq evil-emacs-state-cursor '("red" box))
 (setq evil-normal-state-cursor '("green" box))
