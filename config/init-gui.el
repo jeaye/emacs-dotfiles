@@ -17,5 +17,8 @@
 
 ; Clean scratch buffer
 (setq initial-scratch-message nil)
+(setq inhibit-startup-screen t)
+
+(set-cursor-color "#ffffff")
 
 (provide 'init-gui)
