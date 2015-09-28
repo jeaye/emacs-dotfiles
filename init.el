@@ -13,4 +13,12 @@
 (require 'init-gui)
 (require 'init-gdb)
 
+; TODO
+; magit
+; helm
+; completion
+; powerline
+; escape all the things
+; leader (M-x)
+
 (provide 'init)

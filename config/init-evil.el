@@ -6,6 +6,12 @@
 (require 'evil)
 (evil-mode 1)
 
+; Setup , as a leader
+(require 'evil-leader)
+(global-evil-leader-mode)
+(setq evil-leader/in-all-states 1)
+(evil-leader/set-leader ",")
+
 ; Color cursor based on mode
 (setq evil-emacs-state-cursor '("red" box))
 (setq evil-normal-state-cursor '("green" box))
