@@ -15,6 +15,7 @@
 (require 'init-powerline)
 
 ; TODO
+; require packages
 ; magit
 ; helm
 ; completion
