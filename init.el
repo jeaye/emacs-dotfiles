@@ -12,6 +12,7 @@
 (require 'init-save)
 (require 'init-gui)
 (require 'init-gdb)
+(require 'init-powerline)
 
 ; TODO
 ; magit
