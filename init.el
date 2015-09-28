@@ -4,6 +4,7 @@
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (require 'init-after)
 (require 'init-package)
+(require 'init-el-get)
 (require 'init-evil)
 (require 'init-color)
 (require 'init-indent)
@@ -21,5 +22,6 @@
 ; powerline
 ; escape all the things
 ; leader (M-x)
+; gui menus
 
 (provide 'init)
