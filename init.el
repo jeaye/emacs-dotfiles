@@ -9,5 +9,6 @@
 (require 'init-indent)
 (require 'init-lisp)
 (require 'init-font)
+(require 'init-save)
 
 (provide 'init)
