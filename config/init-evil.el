@@ -12,6 +12,13 @@
 (setq evil-leader/in-all-states 1)
 (evil-leader/set-leader ",")
 
+; ,x to be M-x
+(evil-leader/set-key "x" 'execute-extended-command)
+
+; Allow escaping of lots of things
+(evil-escape-mode)
+(global-set-key (kbd "C-[") 'evil-escape)
+
 ; Color cursor based on mode
 (setq evil-emacs-state-cursor '("red" box))
 (setq evil-normal-state-cursor '("green" box))
