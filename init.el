@@ -11,5 +11,6 @@
 (require 'init-font)
 (require 'init-save)
 (require 'init-gui)
+(require 'init-gdb)
 
 (provide 'init)
