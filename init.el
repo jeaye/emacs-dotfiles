@@ -15,13 +15,8 @@
 (require 'init-powerline)
 
 ; TODO
-; require packages
 ; magit
 ; helm
-; completion
-; powerline
-; escape all the things
-; leader (M-x)
-; gui menus
+; completion (emacs-ycmd, company-ycmd)
 
 (provide 'init)
