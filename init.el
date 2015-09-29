@@ -15,10 +15,11 @@
 (require 'init-powerline)
 (require 'init-helm)
 (require 'init-slime)
+(require 'init-autocomplete)
 
 ; TODO
 ; magit
-; helm (proper ctrlp functionality)
+; helm - open in new tab
 ; completion (emacs-ycmd, company-ycmd)
 ; org mode
 
