@@ -67,6 +67,11 @@
 (use-package evil-tabs
   :config
   (progn
-    (global-evil-tabs-mode t)))
+    (global-evil-tabs-mode t)
+    (evil-leader/set-key "t" 'elscreen-create)
+    (global-unset-key (kbd "C-l"))
+    (global-unset-key (kbd "C-h"))
+    (define-key evil-normal-state-map (kbd "C-l") 'elscreen-next)
+    (define-key evil-normal-state-map (kbd "C-h") 'elscreen-previous)))
 
 (provide 'init-evil)
