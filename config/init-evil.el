@@ -51,7 +51,6 @@
 
 ; Surround
 (add-to-list 'load-path "~/.emacs.d/packages/evil-surround")
-(load "evil-surround")
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
