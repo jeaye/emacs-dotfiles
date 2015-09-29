@@ -14,6 +14,9 @@
     (setq evil-operator-state-cursor '("red" hollow))
 
     ; Use C-j and C-k for Vim's C-d and C-u
+    (global-unset-key (kbd "C-d")) ; TODO: Write a wrapper for this
+    (global-unset-key (kbd "C-k"))
+    (global-unset-key (kbd "C-j"))
     (define-key evil-normal-state-map (kbd "C-k") (lambda ()
                                                     (interactive)
                                                     (evil-scroll-up nil)))
