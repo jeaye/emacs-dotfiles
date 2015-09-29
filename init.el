@@ -14,11 +14,13 @@
 (require 'init-gdb)
 (require 'init-powerline)
 (require 'init-helm)
+(require 'init-slime)
 
 ; TODO
 ; magit
 ; helm (proper ctrlp functionality)
 ; completion (emacs-ycmd, company-ycmd)
 ; org mode
+; line numbers
 
 (provide 'init)
