@@ -21,4 +21,7 @@
 
 (set-cursor-color "#ffffff")
 
+; Line numbers
+(global-linum-mode t)
+
 (provide 'init-gui)
