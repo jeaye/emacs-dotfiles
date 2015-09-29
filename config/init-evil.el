@@ -46,6 +46,9 @@
                                                 (interactive)
                                                 (evil-scroll-down nil)))
 
+; C-w to delete words
+(define-key minibuffer-local-map (kbd "C-w") #'backward-kill-word)
+
 ; Surround
 (add-to-list 'load-path "~/.emacs.d/packages/evil-surround")
 (load "evil-surround")

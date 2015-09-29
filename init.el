@@ -16,7 +16,7 @@
 
 ; TODO
 ; magit
-; helm
+; helm (proper ctrlp functionality)
 ; completion (emacs-ycmd, company-ycmd)
 
 (provide 'init)
