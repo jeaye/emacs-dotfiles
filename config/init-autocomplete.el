@@ -14,4 +14,9 @@
     (setq company-backends (delete 'company-clang company-backends))
     (global-company-mode)))
 
+(use-package flycheck-ycmd
+  :config
+  (progn
+    (flycheck-ycmd-setup)))
+
 (provide 'init-autocomplete)
