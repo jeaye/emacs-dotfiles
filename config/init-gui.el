@@ -19,7 +19,7 @@
 (setq initial-scratch-message nil)
 (setq inhibit-startup-screen t)
 
-(set-cursor-color "#ffffff")
+(set-mouse-color "#ffffff")
 
 ; Line numbers
 (global-linum-mode t)
