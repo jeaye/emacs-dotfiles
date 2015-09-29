@@ -1,13 +1,13 @@
 ;; Solarized
-(require-package 'color-theme-sanityinc-solarized)
-(require 'color-theme-sanityinc-solarized)
-(color-theme-sanityinc-solarized--define-theme dark)
-
-; Allow colors to work better in the terminal
-;(color-theme-approximate-on)
+(use-package color-theme-sanityinc-solarized
+  :config
+  (progn
+    (color-theme-sanityinc-solarized--define-theme dark)))
 
 ; Colorize delimiters
-(require-package 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :config
+  (progn
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
 
 (provide 'init-color)

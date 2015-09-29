@@ -19,5 +19,7 @@
 ; magit
 ; helm (proper ctrlp functionality)
 ; completion (emacs-ycmd, company-ycmd)
+; tabs
+; org mode
 
 (provide 'init)

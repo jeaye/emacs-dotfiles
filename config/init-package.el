@@ -10,6 +10,10 @@
   (unless (package-installed-p package)
     (unless (assoc package package-archive-contents)
       (package-refresh-contents))
-    (package-install package)))
+    (package-install package))
+  (require package))
+
+(require-package 'use-package)
+(setq use-package-always-ensure t)
 
 (provide 'init-package)
