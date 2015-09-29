@@ -21,6 +21,5 @@
 ; helm (proper ctrlp functionality)
 ; completion (emacs-ycmd, company-ycmd)
 ; org mode
-; line numbers
 
 (provide 'init)
