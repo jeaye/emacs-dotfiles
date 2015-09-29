@@ -5,9 +5,12 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ; Color the gutter
-(require-package 'fill-column-indicator)
-(require 'fill-column-indicator)
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-(global-fci-mode 1)
+(use-package fill-column-indicator
+  :config
+  (progn
+    (define-globalized-minor-mode global-fci-mode
+                                  fci-mode
+                                  (lambda () (fci-mode 1)))
+    (global-fci-mode 1)))
 
 (provide 'init-indent)
