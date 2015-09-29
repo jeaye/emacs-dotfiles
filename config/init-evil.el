@@ -63,4 +63,10 @@
   (progn
     (global-evil-surround-mode 1)))
 
+; Tabs
+(use-package evil-tabs
+  :config
+  (progn
+    (global-evil-tabs-mode t)))
+
 (provide 'init-evil)

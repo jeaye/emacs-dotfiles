@@ -1,5 +1,6 @@
 ; Use spaces instead of tabs
-(setq-default tab-width 2 indent-tabs-mode nil)
+(setq-default tab-width 2
+              indent-tabs-mode nil)
 
 ; Indent after pressing return
 (define-key global-map (kbd "RET") 'newline-and-indent)
