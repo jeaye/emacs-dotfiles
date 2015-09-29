@@ -3,7 +3,7 @@
   (progn
     (global-ycmd-mode)
     (set-variable 'ycmd-server-command
-                  '("python" "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/__main__.py"))
+                  '("python" "~/.emacs.d/packages/ycmd/ycmd/"))
     (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
     (setq ycmd-extra-conf-handler 'load)))
 
@@ -11,6 +11,7 @@
   :config
   (progn
     (company-ycmd-setup)
-    (setq company-backends (delete 'company-clang company-backends))))
+    (setq company-backends (delete 'company-clang company-backends))
+    (global-company-mode)))
 
 (provide 'init-autocomplete)
