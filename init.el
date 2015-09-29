@@ -13,6 +13,7 @@
 (require 'init-gui)
 (require 'init-gdb)
 (require 'init-powerline)
+(require 'init-helm)
 
 ; TODO
 ; magit
