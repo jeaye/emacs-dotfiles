@@ -1,6 +1,9 @@
 ;; Evil Mode
 
 (use-package evil
+  :init
+  (progn
+    (setq evil-want-C-u-scroll t))
   :config
   (progn
     (evil-mode 1)
@@ -17,12 +20,6 @@
     (global-unset-key (kbd "C-d")) ; TODO: Write a wrapper for this
     (global-unset-key (kbd "C-k"))
     (global-unset-key (kbd "C-j"))
-    (define-key evil-normal-state-map (kbd "C-k") (lambda ()
-                                                    (interactive)
-                                                    (evil-scroll-up nil)))
-    (define-key evil-normal-state-map (kbd "C-j") (lambda ()
-                                                    (interactive)
-                                                    (evil-scroll-down nil)))
 
     ; C-w to delete words
     (define-key minibuffer-local-map (kbd "C-w") #'backward-kill-word)
