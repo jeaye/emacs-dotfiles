@@ -3,7 +3,7 @@
   (progn
     (global-ycmd-mode)
     (set-variable 'ycmd-server-command
-                  '("python" "~/.emacs.d/packages/ycmd/ycmd/"))
+                  '("python" "/home/jeaye/.emacs.d/packages/ycmd/ycmd/"))
     (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
     (setq ycmd-extra-conf-handler 'load)))
 
@@ -17,6 +17,7 @@
 (use-package flycheck-ycmd
   :config
   (progn
-    (flycheck-ycmd-setup)))
+    (flycheck-ycmd-setup)
+    (global-flycheck-mode)))
 
 (provide 'init-autocomplete)
