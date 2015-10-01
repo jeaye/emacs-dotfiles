@@ -20,7 +20,6 @@
 ; TODO
 ; magit
 ; helm - open in new tab
-; company-quickhelp
 ; org mode
 
 (provide 'init)
