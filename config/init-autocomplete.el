@@ -15,6 +15,10 @@
     (global-company-mode)
     (company-ycmd-setup)
 
+    (define-key company-active-map (kbd "TAB") 'company-select-next)
+    (define-key company-active-map [tab] 'company-select-next)
+    (setq company-selection-wrap-around t)
+
     ; Company + fci is fucked
     ; https://github.com/company-mode/company-mode/issues/180
     (defvar-local company-fci-mode-on-p nil)
@@ -26,7 +30,12 @@
       (when company-fci-mode-on-p (fci-mode 1)))
     (add-hook 'company-completion-started-hook 'company-turn-off-fci)
     (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-    (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)))
+    (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
+
+    (use-package company-quickhelp
+      :config
+      (progn
+        (company-quickhelp-mode 1)))))
 
 (use-package flycheck-ycmd
   :config
