@@ -16,10 +16,11 @@
     (setq evil-replace-state-cursor '("red" bar))
     (setq evil-operator-state-cursor '("red" hollow))
 
-    ; Use C-j and C-k for Vim's C-d and C-u
-    (global-unset-key (kbd "C-d")) ; TODO: Write a wrapper for this
-    (global-unset-key (kbd "C-k"))
-    (global-unset-key (kbd "C-j"))
+    ; Wipe out most existing C- bindings
+    (dolist (key '("\C-a" "\C-b" "\C-c" "\C-d" "\C-e" "\C-f" "\C-g"
+                   "\C-h" "\C-j" "\C-k" "\C-l" "\C-n" "\C-o" "\C-p"
+                   "\C-q" "\C-t" "\C-u" "\C-v" "\C-x" "\C-z" "\e"))
+      (global-unset-key key))
 
     ; C-w to delete words
     (define-key minibuffer-local-map (kbd "C-w") #'backward-kill-word)
