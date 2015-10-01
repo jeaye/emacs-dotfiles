@@ -20,9 +20,7 @@
 ; TODO
 ; magit
 ; helm - open in new tab
-; completion (emacs-ycmd, company-ycmd)
-;   mostly working
-;   company-quickhelp
+; company-quickhelp
 ; org mode
 
 (provide 'init)
