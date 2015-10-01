@@ -29,8 +29,9 @@
     (defun company-maybe-turn-on-fci (&rest ignore)
       (when company-fci-mode-on-p (fci-mode 1)))
     (add-hook 'company-completion-started-hook 'company-turn-off-fci)
-    (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-    (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
+    (add-to-hooks '(company-completion-finished-hook
+                    company-completion-cancelled-hook)
+                  'company-maybe-turn-on-fci)
 
     (use-package company-quickhelp
       :config

@@ -24,4 +24,15 @@
 ; Line numbers
 (global-linum-mode t)
 
+; Highlight source code identifiers
+(add-to-hooks '(c-mode-common-hook
+                lisp-mode-hook
+                emacs-lisp-mode-hook)
+              (lambda ()
+                (font-lock-add-keywords nil
+                                        '(("\\<\\(FIXME\\|TODO\\|BUG\\|XXX\\)"
+                                           1
+                                           font-lock-warning-face
+                                           t)))))
+
 (provide 'init-gui)

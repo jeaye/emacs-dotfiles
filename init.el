@@ -2,7 +2,7 @@
 (setq user-mail-address "contact@jeaye.com")
 
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
-(require 'init-after)
+(require 'init-helper)
 (require 'init-package)
 (require 'init-evil)
 (require 'init-color)
@@ -21,5 +21,6 @@
 ; magit
 ; helm - open in new tab
 ; org mode
+; diminish
 
 (provide 'init)
