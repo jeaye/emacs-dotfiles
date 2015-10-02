@@ -1,5 +1,5 @@
 ; Use spaces instead of tabs
-(setq-default tab-width 2
+(setq-default default-tab-width 2
               indent-tabs-mode nil)
 
 ; Indent after pressing return
