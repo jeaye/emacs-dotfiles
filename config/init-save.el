@@ -1,5 +1,7 @@
 ; No backups
+(setq backup-inhibited t)
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ; Save the cursor position for each file
 (setq save-place-file "~/.emacs.d/saveplace")
