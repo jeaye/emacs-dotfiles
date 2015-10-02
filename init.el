@@ -23,5 +23,6 @@
 ; helm - open in new tab
 ; org mode
 ; diminish
+; move tabs
 
 (provide 'init)
