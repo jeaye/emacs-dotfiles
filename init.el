@@ -16,6 +16,7 @@
 (require 'init-helm)
 (require 'init-slime)
 (require 'init-autocomplete)
+(require 'init-cmake)
 
 ; TODO
 ; magit
