@@ -24,5 +24,6 @@
 ; org mode
 ; diminish
 ; move tabs
+; unicode input like vim
 
 (provide 'init)
