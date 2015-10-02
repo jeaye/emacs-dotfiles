@@ -13,6 +13,7 @@
         (setq projectile-enable-caching t)
         (define-key evil-normal-state-map
                     (kbd "C-p")
-                    'projectile-find-file)))))
+                    'projectile-find-file)
+        (evil-leader/set-key "g" 'projectile-grep)))))
 
 (provide 'init-helm)
