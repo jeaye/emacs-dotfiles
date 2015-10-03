@@ -5,6 +5,8 @@
 ; Indent after pressing return
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
+(global-visual-line-mode)
+
 ; Color the gutter
 (use-package fill-column-indicator
   :config
