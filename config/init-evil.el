@@ -23,7 +23,8 @@
       (global-unset-key key))
 
     ; C-w to delete words
-    (define-key minibuffer-local-map (kbd "C-w") #'backward-kill-word)
+    (define-key minibuffer-local-map (kbd "C-w") 'backward-kill-word)
+    ;(define-key minibuffer-local-map (kbd "C-6") 'evil-buffer)
 
     ; j and k move the visual line in long wrapped lines
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
