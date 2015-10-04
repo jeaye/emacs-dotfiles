@@ -17,6 +17,7 @@
 (require 'init-slime)
 (require 'init-autocomplete)
 (require 'init-cmake)
+(require 'init-markdown)
 
 ; TODO
 ; magit
@@ -25,5 +26,7 @@
 ; diminish
 ; move tabs
 ; unicode input like vim
+; :e from PWD, not the current buffer
+; ^6 doesn't work right
 
 (provide 'init)
