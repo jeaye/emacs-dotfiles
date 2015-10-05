@@ -7,6 +7,10 @@
 
 (global-visual-line-mode)
 
+; C++ indent style
+(setq c-default-style "bsd"
+      c-basic-offset 2)
+
 ; Color the gutter
 (use-package fill-column-indicator
   :config
