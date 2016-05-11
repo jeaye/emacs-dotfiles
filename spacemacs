@@ -252,6 +252,19 @@ layers configuration. You are free to put any user code."
   (global-linum-mode)
 
   (load-file "~/projects/emacs-dotfiles/init.el")
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+  ; Tabs
+  (use-package evil-tabs
+    :config
+    (progn
+      (global-evil-tabs-mode t)
+      (evil-leader/set-key "t" 'elscreen-create)
+      (global-unset-key (kbd "C-l"))
+      (global-unset-key (kbd "C-h"))
+      (define-key evil-normal-state-map (kbd "C-l") 'elscreen-next)
+      (define-key evil-normal-state-map (kbd "C-h") 'elscreen-previous)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
