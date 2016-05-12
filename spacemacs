@@ -260,14 +260,6 @@ layers configuration. You are free to put any user code."
   ; Font adjustment
   (define-key global-map (kbd "C-+") 'text-scale-increase)
   (define-key global-map (kbd "C--") 'text-scale-decrease)
-
-  ; Tabs
-  ;(global-evil-tabs-mode t)
-  (spacemacs/set-leader-keys "ot" 'elscreen-create)
-  ;(global-unset-key (kbd "C-l"))
-  ;(global-unset-key (kbd "C-h"))
-  ;(define-key evil-normal-state-map (kbd "C-l") 'elscreen-next)
-  ;(define-key evil-normal-state-map (kbd "C-h") 'elscreen-previous)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
