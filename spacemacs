@@ -35,7 +35,9 @@ values."
      spell-checking
      ;; syntax-checking
      ;; version-control
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t)
      ycmd
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
@@ -256,6 +258,9 @@ layers configuration. You are free to put any user code."
 
   (load-file "~/projects/emacs-dotfiles/init.el")
 
+  ; TODO:
+  ;   ranger
+
   ; Wrap long lines
   (global-visual-line-mode 1)
 
@@ -276,9 +281,13 @@ layers configuration. You are free to put any user code."
   (define-key evil-motion-state-map (kbd "g8") 'eyebrowse-switch-to-window-config-8)
   (define-key evil-motion-state-map (kbd "g9") 'eyebrowse-switch-to-window-config-9)
   (define-key evil-motion-state-map (kbd "gW") 'spacemacs/workspaces-micro-state)
+  (define-key evil-motion-state-map (kbd "gc") 'eyebrowse-close-window-config)
 
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
+
+  ; Pasting on OS X
+  (fset 'evil-visual-update-x-selection 'ignore) 
 
   ; Font adjustment
   (define-key global-map (kbd "C-+") 'text-scale-increase)
