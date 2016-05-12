@@ -264,6 +264,9 @@ layers configuration. You are free to put any user code."
   ; Enable completion everywhere
   (global-company-mode)
 
+  ; Always follow symbolic links
+  (setq vc-follow-symlinks t)
+
   ; Wrap long lines
   (global-visual-line-mode 1)
 
