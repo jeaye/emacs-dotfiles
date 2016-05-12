@@ -261,6 +261,9 @@ layers configuration. You are free to put any user code."
   ; TODO:
   ;   ranger
 
+  ; Enable completion everywhere
+  (global-company-mode)
+
   ; Wrap long lines
   (global-visual-line-mode 1)
 
