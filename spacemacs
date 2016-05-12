@@ -42,12 +42,13 @@ values."
             c-c++-enable-clang-support t)
      clojure
      colors
+     eyebrowse
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(evil-tabs)
+   dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -254,8 +255,30 @@ layers configuration. You are free to put any user code."
   (global-linum-mode)
 
   (load-file "~/projects/emacs-dotfiles/init.el")
+
+  ; Wrap long lines
+  (global-visual-line-mode 1)
+
+  ; Moving over wrapped lines
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+  ; Eyebrowse window management
+  ; TODO: Macro for this?
+  (define-key evil-motion-state-map (kbd "g0") 'eyebrowse-switch-to-window-config-0)
+  (define-key evil-motion-state-map (kbd "g1") 'eyebrowse-switch-to-window-config-1)
+  (define-key evil-motion-state-map (kbd "g2") 'eyebrowse-switch-to-window-config-2)
+  (define-key evil-motion-state-map (kbd "g3") 'eyebrowse-switch-to-window-config-3)
+  (define-key evil-motion-state-map (kbd "g4") 'eyebrowse-switch-to-window-config-4)
+  (define-key evil-motion-state-map (kbd "g5") 'eyebrowse-switch-to-window-config-5)
+  (define-key evil-motion-state-map (kbd "g6") 'eyebrowse-switch-to-window-config-6)
+  (define-key evil-motion-state-map (kbd "g7") 'eyebrowse-switch-to-window-config-7)
+  (define-key evil-motion-state-map (kbd "g8") 'eyebrowse-switch-to-window-config-8)
+  (define-key evil-motion-state-map (kbd "g9") 'eyebrowse-switch-to-window-config-9)
+  (define-key evil-motion-state-map (kbd "gW") 'spacemacs/workspaces-micro-state)
+
+  (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
 
   ; Font adjustment
   (define-key global-map (kbd "C-+") 'text-scale-increase)
