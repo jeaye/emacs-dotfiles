@@ -37,7 +37,9 @@ values."
      ;; version-control
      auto-completion
      ycmd
-     c-c++
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-clang-support t)
      clojure
      colors
      )
@@ -45,7 +47,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(evil-tabs)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -255,16 +257,17 @@ layers configuration. You are free to put any user code."
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
+  ; Font adjustment
+  (define-key global-map (kbd "C-+") 'text-scale-increase)
+  (define-key global-map (kbd "C--") 'text-scale-decrease)
+
   ; Tabs
-  (use-package evil-tabs
-    :config
-    (progn
-      (global-evil-tabs-mode t)
-      (evil-leader/set-key "t" 'elscreen-create)
-      (global-unset-key (kbd "C-l"))
-      (global-unset-key (kbd "C-h"))
-      (define-key evil-normal-state-map (kbd "C-l") 'elscreen-next)
-      (define-key evil-normal-state-map (kbd "C-h") 'elscreen-previous)))
+  ;(global-evil-tabs-mode t)
+  (spacemacs/set-leader-keys "ot" 'elscreen-create)
+  ;(global-unset-key (kbd "C-l"))
+  ;(global-unset-key (kbd "C-h"))
+  ;(define-key evil-normal-state-map (kbd "C-l") 'elscreen-next)
+  ;(define-key evil-normal-state-map (kbd "C-h") 'elscreen-previous)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
