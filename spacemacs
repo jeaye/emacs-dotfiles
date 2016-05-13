@@ -298,6 +298,13 @@ layers configuration. You are free to put any user code."
   ; Font adjustment
   (define-key global-map (kbd "C-+") 'text-scale-increase)
   (define-key global-map (kbd "C--") 'text-scale-decrease)
+
+  ; YCMD
+  (global-ycmd-mode)
+  (set-variable 'ycmd-server-command
+                '("python" "~/projects/ycmd/ycmd"))
+  (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
+  (setq ycmd-extra-conf-handler 'load)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
