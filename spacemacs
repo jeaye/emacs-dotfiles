@@ -301,7 +301,23 @@ layers configuration. You are free to put any user code."
 
   ; Require new lines at the end of files
   (setq require-final-newline t)
-  )
+
+  ; TODO: Set ignored directories
+  ;set wildignore+=target,out,build_debug,build_release,build
+  ;set wildignore+=Library
+  ;set wildignore+=_site,vendor
+  ;set wildignore+=Resource
+  ;set wildignore+=boost_*,googletest,*.proto,protobuf,Frameworks
+
+  ; Ignore certain files while searching
+  (dolist (ignored '("*.csproject" "*.meta"
+                     "*.o" "*.a" "*.so" "*.jar"
+                     "*.strings" "*.plist" "*.xml" "*.filters"
+                     "*.xcscheme" "*.xcworkspacedata" "*.xcsmblueprint"
+                     "*.properties" "*.props" "*.keystore" "*.framework"
+                     "*.c3b" "*.ccz" "*.vcxitems" "*.xib" "*.pbxproj"
+                     "*.xcuserstate"))
+    (add-to-list 'grep-find-ignored-files ignored)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
