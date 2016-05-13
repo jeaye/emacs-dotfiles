@@ -300,6 +300,7 @@ layers configuration. You are free to put any user code."
   ; TODO: Auto install this and don't hard-code the path
   (global-ycmd-mode)
   (set-variable 'ycmd-server-command
+                ; It's important not to use ~/ here, since it won't be expanded
                 '("python" "/Users/jeaye/projects/ycmd/ycmd"))
   (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
   (setq ycmd-extra-conf-handler 'load)
