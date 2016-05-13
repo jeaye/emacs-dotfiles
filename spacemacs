@@ -45,6 +45,8 @@ values."
      clojure
      colors
      eyebrowse
+     (shell :variables
+            shell-default-shell 'eshell)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -295,9 +297,10 @@ layers configuration. You are free to put any user code."
   (define-key global-map (kbd "C--") 'text-scale-decrease)
 
   ; YCMD
+  ; TODO: Auto install this and don't hard-code the path
   (global-ycmd-mode)
   (set-variable 'ycmd-server-command
-                '("python" "~/projects/ycmd/ycmd"))
+                '("python" "/Users/jeaye/projects/ycmd/ycmd"))
   (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
   (setq ycmd-extra-conf-handler 'load)
   )
