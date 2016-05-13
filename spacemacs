@@ -309,6 +309,8 @@ layers configuration. You are free to put any user code."
   ;set wildignore+=Resource
   ;set wildignore+=boost_*,googletest,*.proto,protobuf,Frameworks
 
+  ; TODO: Ignore extensionless binary files while searching?
+
   ; Ignore certain files while searching
   (dolist (ignored '("*.csproject" "*.meta"
                      "*.o" "*.a" "*.so" "*.jar"
