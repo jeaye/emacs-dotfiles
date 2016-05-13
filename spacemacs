@@ -48,6 +48,7 @@ values."
      eyebrowse
      (shell :variables
             shell-default-shell 'eshell)
+     nixos
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -256,8 +257,11 @@ layers configuration. You are free to put any user code."
 
   (load-file "~/projects/emacs-dotfiles/init.el")
 
-  ; TODO:
+  ; TODO (learn, add, and/or configure layers/packages for):
   ;   ranger
+  ;   git
+  ;   more shell bits
+  ;   org
 
   ; Enable completion everywhere
   (global-company-mode)
