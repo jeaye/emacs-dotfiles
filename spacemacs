@@ -298,6 +298,9 @@ layers configuration. You are free to put any user code."
                 '("python" "/Users/jeaye/projects/ycmd/ycmd"))
   (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
   (setq ycmd-extra-conf-handler 'load)
+
+  ; Require new lines at the end of files
+  (setq require-final-newline t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
