@@ -33,6 +33,7 @@ values."
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
      clojure
+     csharp
      colors
      eyebrowse
      (shell :variables
@@ -312,14 +313,14 @@ layers configuration. You are free to put any user code."
   ; TODO: Ignore extensionless binary files while searching?
 
   ; Ignore certain files while searching
-  (dolist (ignored '("*.csproject" "*.meta"
-                     "*.o" "*.a" "*.so" "*.jar"
-                     "*.strings" "*.plist" "*.xml" "*.filters"
-                     "*.xcscheme" "*.xcworkspacedata" "*.xcsmblueprint"
-                     "*.properties" "*.props" "*.keystore" "*.framework"
-                     "*.c3b" "*.ccz" "*.vcxitems" "*.xib" "*.pbxproj"
-                     "*.xcuserstate"))
-    (add-to-list 'grep-find-ignored-files ignored)))
+  ;(dolist (ignored '("*.csproject" "*.meta"
+  ;                   "*.o" "*.a" "*.so" "*.jar"
+  ;                   "*.strings" "*.plist" "*.xml" "*.filters"
+  ;                   "*.xcscheme" "*.xcworkspacedata" "*.xcsmblueprint"
+  ;                   "*.properties" "*.props" "*.keystore" "*.framework"
+  ;                   "*.c3b" "*.ccz" "*.vcxitems" "*.xib" "*.pbxproj"
+  ;                   "*.xcuserstate"))
+  ;  (add-to-list 'grep-find-ignored-files ignored)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
