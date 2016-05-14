@@ -320,7 +320,11 @@ layers configuration. You are free to put any user code."
   ;                   "*.properties" "*.props" "*.keystore" "*.framework"
   ;                   "*.c3b" "*.ccz" "*.vcxitems" "*.xib" "*.pbxproj"
   ;                   "*.xcuserstate"))
-  ;  (add-to-list 'grep-find-ignored-files ignored)))
+  ;  (add-to-list 'grep-find-ignored-files ignored))
+
+  ; Wrap while typing in Markdown files
+  (add-hook 'markdown-mode-hook 'auto-fill-mode)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
