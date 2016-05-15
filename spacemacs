@@ -286,6 +286,7 @@ layers configuration. You are free to put any user code."
 
   ; Pasting on OS X
   (fset 'evil-visual-update-x-selection 'ignore) 
+  (setq 'evil-search-highlight-persist nil)
 
   ; Font adjustment
   (define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -293,12 +294,13 @@ layers configuration. You are free to put any user code."
 
   ; YCMD
   ; TODO: Auto install this and don't hard-code the path
-  (global-ycmd-mode)
   (set-variable 'ycmd-server-command
                 ; It's important not to use ~/ here, since it won't be expanded
                 '("python" "/Users/jeaye/projects/ycmd/ycmd"))
   (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
   (setq ycmd-extra-conf-handler 'load)
+  (with-eval-after-load 'ycmd
+    (global-ycmd-mode))
 
   ; Require new lines at the end of files
   (setq require-final-newline t)
@@ -324,6 +326,12 @@ layers configuration. You are free to put any user code."
 
   ; Wrap while typing in Markdown files
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
+
+  ; Have ^w delete words when typing
+  (with-eval-after-load 'company
+    (define-key company-active-map (kbd "C-w") 'evil-delete-backward-word))
+  (with-eval-after-load 'helm
+    (define-key helm-map (kbd "C-w") 'evil-delete-backward-word))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
