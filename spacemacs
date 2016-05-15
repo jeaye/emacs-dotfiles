@@ -328,10 +328,15 @@ layers configuration. You are free to put any user code."
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
 
   ; Have ^w delete words when typing
+  ; TODO: Function: redefin-key which binds nil then the value? Is it needed?
   (with-eval-after-load 'company
+    (define-key company-active-map (kbd "C-w") nil)
     (define-key company-active-map (kbd "C-w") 'evil-delete-backward-word))
   (with-eval-after-load 'helm
-    (define-key helm-map (kbd "C-w") 'evil-delete-backward-word))
+    (define-key helm-map (kbd "C-w") nil)
+    (define-key helm-map (kbd "C-w") 'evil-delete-backward-word)
+    (define-key helm-find-files-map (kbd "C-w") nil)
+    (define-key helm-find-files-map (kbd "C-w") 'evil-delete-backward-word))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
