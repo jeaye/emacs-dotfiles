@@ -253,40 +253,52 @@ layers configuration. You are free to put any user code."
   ;   more shell bits
   ;   org
 
-  ; Enable completion everywhere
-  (global-company-mode)
-
   ; Always follow symbolic links
   (setq vc-follow-symlinks t)
 
   ; Wrap long lines
   (global-visual-line-mode 1)
 
-  ; Moving over wrapped lines
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (with-eval-after-load 'evil
+    ; Moving over wrapped lines
+    (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+    (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
-  ; Eyebrowse window management
-  ; TODO: Macro for this?
-  (define-key evil-motion-state-map (kbd "g0") 'eyebrowse-switch-to-window-config-0)
-  (define-key evil-motion-state-map (kbd "g1") 'eyebrowse-switch-to-window-config-1)
-  (define-key evil-motion-state-map (kbd "g2") 'eyebrowse-switch-to-window-config-2)
-  (define-key evil-motion-state-map (kbd "g3") 'eyebrowse-switch-to-window-config-3)
-  (define-key evil-motion-state-map (kbd "g4") 'eyebrowse-switch-to-window-config-4)
-  (define-key evil-motion-state-map (kbd "g5") 'eyebrowse-switch-to-window-config-5)
-  (define-key evil-motion-state-map (kbd "g6") 'eyebrowse-switch-to-window-config-6)
-  (define-key evil-motion-state-map (kbd "g7") 'eyebrowse-switch-to-window-config-7)
-  (define-key evil-motion-state-map (kbd "g8") 'eyebrowse-switch-to-window-config-8)
-  (define-key evil-motion-state-map (kbd "g9") 'eyebrowse-switch-to-window-config-9)
-  (define-key evil-motion-state-map (kbd "gW") 'spacemacs/workspaces-micro-state)
-  (define-key evil-motion-state-map (kbd "gc") 'eyebrowse-close-window-config)
+    ; Eyebrowse window management
+    ; TODO: Macro for this?
+    (define-key evil-motion-state-map (kbd "g0") 'eyebrowse-switch-to-window-config-0)
+    (define-key evil-motion-state-map (kbd "g1") 'eyebrowse-switch-to-window-config-1)
+    (define-key evil-motion-state-map (kbd "g2") 'eyebrowse-switch-to-window-config-2)
+    (define-key evil-motion-state-map (kbd "g3") 'eyebrowse-switch-to-window-config-3)
+    (define-key evil-motion-state-map (kbd "g4") 'eyebrowse-switch-to-window-config-4)
+    (define-key evil-motion-state-map (kbd "g5") 'eyebrowse-switch-to-window-config-5)
+    (define-key evil-motion-state-map (kbd "g6") 'eyebrowse-switch-to-window-config-6)
+    (define-key evil-motion-state-map (kbd "g7") 'eyebrowse-switch-to-window-config-7)
+    (define-key evil-motion-state-map (kbd "g8") 'eyebrowse-switch-to-window-config-8)
+    (define-key evil-motion-state-map (kbd "g9") 'eyebrowse-switch-to-window-config-9)
+    (define-key evil-motion-state-map (kbd "gW") 'spacemacs/workspaces-micro-state)
+    (define-key evil-motion-state-map (kbd "gc") 'eyebrowse-close-window-config)
 
-  (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-  (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
+    (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
+    (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
 
-  ; Pasting on OS X
-  (fset 'evil-visual-update-x-selection 'ignore) 
-  (setq 'evil-search-highlight-persist nil)
+    ; Pasting on OS X
+    (setq evil-visual-update-x-selection 'ignore) 
+    (setq evil-search-highlight-persist nil)
+
+    ; Have ^w delete words when typing
+    ; TODO: Function: redefin-key which binds nil then the value? Is it needed?
+    (with-eval-after-load 'company
+      ; Enable completion everywhere
+      (global-company-mode)
+
+      (define-key company-active-map (kbd "C-w") nil)
+      (define-key company-active-map (kbd "C-w") 'evil-delete-backward-word))
+    (with-eval-after-load 'helm
+      (define-key helm-map (kbd "C-w") nil)
+      (define-key helm-map (kbd "C-w") 'evil-delete-backward-word)
+      (define-key helm-find-files-map (kbd "C-w") nil)
+      (define-key helm-find-files-map (kbd "C-w") 'evil-delete-backward-word)))
 
   ; Font adjustment
   (define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -326,17 +338,6 @@ layers configuration. You are free to put any user code."
 
   ; Wrap while typing in Markdown files
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
-
-  ; Have ^w delete words when typing
-  ; TODO: Function: redefin-key which binds nil then the value? Is it needed?
-  (with-eval-after-load 'company
-    (define-key company-active-map (kbd "C-w") nil)
-    (define-key company-active-map (kbd "C-w") 'evil-delete-backward-word))
-  (with-eval-after-load 'helm
-    (define-key helm-map (kbd "C-w") nil)
-    (define-key helm-map (kbd "C-w") 'evil-delete-backward-word)
-    (define-key helm-find-files-map (kbd "C-w") nil)
-    (define-key helm-find-files-map (kbd "C-w") 'evil-delete-backward-word))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
