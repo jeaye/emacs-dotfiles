@@ -288,10 +288,9 @@ layers configuration. You are free to put any user code."
 
     ; Have ^w delete words when typing
     ; TODO: Function: redefin-key which binds nil then the value? Is it needed?
+    (global-company-mode)
     (with-eval-after-load 'company
       ; Enable completion everywhere
-      (global-company-mode)
-
       (define-key company-active-map (kbd "C-w") nil)
       (define-key company-active-map (kbd "C-w") 'evil-delete-backward-word))
     (with-eval-after-load 'helm
@@ -311,8 +310,7 @@ layers configuration. You are free to put any user code."
                 '("python" "/Users/jeaye/projects/ycmd/ycmd"))
   (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
   (setq ycmd-extra-conf-handler 'load)
-  (with-eval-after-load 'ycmd
-    (global-ycmd-mode))
+  (global-ycmd-mode)
 
   ; Require new lines at the end of files
   (setq require-final-newline t)
