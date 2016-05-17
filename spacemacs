@@ -245,6 +245,7 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (global-linum-mode)
 
+  ; TODO: Don't hard code this
   (load-file "~/projects/emacs-dotfiles/init.el")
 
   ; TODO (learn, add, and/or configure layers/packages for):
