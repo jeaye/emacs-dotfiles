@@ -11,9 +11,7 @@
 ;;; License: GPLv3
 
 (defvar tabbar-packages
-  '(
-    tabbar
-    )
+  '(tabbar)
   "List of all packages to install and/or initialize. Built-in packages
 which require an initialization must be listed explicitly in the list.")
 
@@ -91,31 +89,31 @@ added at the end."
 
         (set-face-attribute
           'tabbar-default nil
-          :background "gray20"
-          :foreground "gray20"
-          :box '(:line-width 1 :color "gray20" :style nil))
+          :background "#002b36"
+          :foreground "#839496"
+          :box '(:line-width 1 :color "#002b36" :style nil))
         (set-face-attribute
           'tabbar-unselected nil
-          :background "gray30"
-          :foreground "white"
-          :box '(:line-width 5 :color "gray30" :style nil))
+          :background "#002b36"
+          :foreground "#839496"
+          :box '(:line-width 5 :color "#002b36" :style nil))
         (set-face-attribute
           'tabbar-selected nil
-          :background "gray75"
-          :foreground "black"
-          :box '(:line-width 5 :color "gray75" :style nil))
+          :background "#002b36"
+          :foreground "#cb4b16"
+          :box '(:line-width 5 :color "#002b36" :style nil))
         (set-face-attribute
           'tabbar-highlight nil
-          :background "white"
-          :foreground "black"
+          :background "#002b36"
+          :foreground "#859900"
           :underline nil
-          :box '(:line-width 5 :color "white" :style nil))
+          :box '(:line-width 5 :color "#002b36" :style nil))
         (set-face-attribute
           'tabbar-button nil
-          :box '(:line-width 1 :color "gray20" :style nil))
+          :box '(:line-width 1 :color "#002b36" :style nil))
         (set-face-attribute
           'tabbar-separator nil
-          :background "gray20"
+          :background "#002b36"
           :height 0.6)
 
 
