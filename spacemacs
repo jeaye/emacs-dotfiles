@@ -287,6 +287,8 @@ layers configuration. You are free to put any user code."
 
     (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
     (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
+    (define-key evil-motion-state-map (kbd "C-k") 'eyebrowse-next-window-config)
+    (define-key evil-motion-state-map (kbd "C-j") 'eyebrowse-prev-window-config)
 
     ; TODO: Implement tab moving
     (define-key evil-normal-state-map (kbd "C-h") 'tabbar-backward-tab)
