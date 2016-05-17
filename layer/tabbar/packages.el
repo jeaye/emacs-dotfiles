@@ -87,6 +87,7 @@ added at the end."
               (set tabset (sort (cons tab tabs)
                                 (lambda (a b) (string< (buffer-name (car a)) (buffer-name (car b))))))))))
 
+      ; TODO: Remove arrows?
         (set-face-attribute
           'tabbar-default nil
           :background "#002b36"
