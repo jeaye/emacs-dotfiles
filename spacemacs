@@ -252,6 +252,10 @@ layers configuration. You are free to put any user code."
   ;   git
   ;   more shell bits
   ;   org
+  ;   tabs
+  ;   helm - open in new tab
+  ;   diminish
+  ;   unicode input
 
   ; Always follow symbolic links
   (setq vc-follow-symlinks t)
