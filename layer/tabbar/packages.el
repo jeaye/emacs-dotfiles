@@ -88,34 +88,34 @@ added at the end."
                                 (lambda (a b) (string< (buffer-name (car a)) (buffer-name (car b))))))))))
 
       ; TODO: Remove arrows?
-        (set-face-attribute
-          'tabbar-default nil
-          :background "#002b36"
-          :foreground "#839496"
-          :box '(:line-width 1 :color "#002b36" :style nil))
-        (set-face-attribute
-          'tabbar-unselected nil
-          :background "#002b36"
-          :foreground "#839496"
-          :box '(:line-width 5 :color "#002b36" :style nil))
-        (set-face-attribute
-          'tabbar-selected nil
-          :background "#002b36"
-          :foreground "#cb4b16"
-          :box '(:line-width 5 :color "#002b36" :style nil))
-        (set-face-attribute
-          'tabbar-highlight nil
-          :background "#002b36"
-          :foreground "#859900"
-          :underline nil
-          :box '(:line-width 5 :color "#002b36" :style nil))
-        (set-face-attribute
-          'tabbar-button nil
-          :box '(:line-width 1 :color "#002b36" :style nil))
-        (set-face-attribute
-          'tabbar-separator nil
-          :background "#002b36"
-          :height 0.6)
+      (set-face-attribute
+       'tabbar-default nil
+       :background "#002b36"
+       :foreground "#839496"
+       :box '(:line-width 1 :color "#002b36" :style nil))
+      (set-face-attribute
+       'tabbar-unselected nil
+       :background "#002b36"
+       :foreground "#839496"
+       :box '(:line-width 5 :color "#002b36" :style nil))
+      (set-face-attribute
+       'tabbar-selected nil
+       :background "#002b36"
+       :foreground "#cb4b16"
+       :box '(:line-width 5 :color "#002b36" :style nil))
+      (set-face-attribute
+       'tabbar-highlight nil
+       :background "#002b36"
+       :foreground "#859900"
+       :underline nil
+       :box '(:line-width 5 :color "#002b36" :style nil))
+      (set-face-attribute
+       'tabbar-button nil
+       :box '(:line-width 1 :color "#002b36" :style nil))
+      (set-face-attribute
+       'tabbar-separator nil
+       :background "#002b36"
+       :height 0.6)
 
 
       (spacemacs|define-micro-state tabbar-manipulation
