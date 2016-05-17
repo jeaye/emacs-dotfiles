@@ -39,6 +39,7 @@ values."
      (shell :variables
             shell-default-shell 'eshell)
      nixos
+     tabbar
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -286,8 +287,10 @@ layers configuration. You are free to put any user code."
 
     (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
     (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
-    (define-key evil-motion-state-map (kbd "C-l") 'eyebrowse-next-window-config)
-    (define-key evil-motion-state-map (kbd "C-h") 'eyebrowse-prev-window-config)
+
+    ; TODO: Implement tab moving
+    (define-key evil-normal-state-map (kbd "C-h") 'tabbar-backward-tab)
+    (define-key evil-normal-state-map (kbd "C-l") 'tabbar-forward-tab)
 
     ; Pasting on OS X
     (setq evil-visual-update-x-selection 'ignore) 
