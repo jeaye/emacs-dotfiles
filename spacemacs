@@ -13,6 +13,7 @@ values."
    dotspacemacs-distribution 'spacemacs
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
+   ; TODO: Clean this up
    dotspacemacs-configuration-layer-path '("~/projects/emacs-dotfiles/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
@@ -284,6 +285,7 @@ layers configuration. You are free to put any user code."
     (define-key evil-motion-state-map (kbd "g9") 'eyebrowse-switch-to-window-config-9)
     (define-key evil-motion-state-map (kbd "gW") 'spacemacs/workspaces-micro-state)
     (define-key evil-motion-state-map (kbd "gc") 'eyebrowse-close-window-config)
+    ; TODO: gl for last/previous window
 
     (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
     (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
@@ -316,10 +318,21 @@ layers configuration. You are free to put any user code."
   (define-key global-map (kbd "C--") 'text-scale-decrease)
 
   ; YCMD
-  ; TODO: Auto install this and don't hard-code the path
-  (set-variable 'ycmd-server-command
-                ; It's important not to use ~/ here, since it won't be expanded
-                '("python" "/Users/jeaye/projects/ycmd/ycmd"))
+  (let ((ycmd-dir (expand-file-name "private/.ycmd/" user-emacs-directory)))
+    (if (not (file-exists-p ycmd-dir))
+        (progn
+          (message "Cloning and building YCMD...")
+          (shell-command (concat "git clone --recursive "
+                                 "https://github.com/Valloric/ycmd.git "
+                                 ycmd-dir
+                                 " && cd "
+                                 ycmd-dir
+                                 " && python build.py "
+                                 "--clang-completer --omnisharp-completer"))
+          (message "done"))
+      (message "YCMD already exists; not cloning"))
+    (set-variable 'ycmd-server-command
+                  (list "python" (concat ycmd-dir "ycmd/"))))
   (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
   (setq ycmd-extra-conf-handler 'load)
   (global-ycmd-mode)
