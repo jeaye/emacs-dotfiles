@@ -317,6 +317,8 @@ layers configuration. You are free to put any user code."
   (define-key global-map (kbd "C-+") 'text-scale-increase)
   (define-key global-map (kbd "C--") 'text-scale-decrease)
 
+  (spacemacs/toggle-mode-line-minor-modes-off)
+
   ; YCMD
   (let ((ycmd-dir (expand-file-name "private/.ycmd/" user-emacs-directory)))
     (if (not (file-exists-p ycmd-dir))
