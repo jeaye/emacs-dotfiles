@@ -319,6 +319,14 @@ layers configuration. You are free to put any user code."
 
   (spacemacs/toggle-mode-line-minor-modes-off)
 
+  ; Disable smart parens
+  (eval-after-load 'smartparens
+    '(progn
+       (sp-pair "(" nil :actions :rem)
+       (sp-pair "[" nil :actions :rem)
+       (sp-pair "'" nil :actions :rem)
+       (sp-pair "\"" nil :actions :rem)))
+
   ; YCMD
   (let ((ycmd-dir (expand-file-name "private/.ycmd/" user-emacs-directory)))
     (if (not (file-exists-p ycmd-dir))
