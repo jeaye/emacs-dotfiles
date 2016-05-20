@@ -48,7 +48,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(smartparens)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -318,14 +318,6 @@ layers configuration. You are free to put any user code."
   (define-key global-map (kbd "C--") 'text-scale-decrease)
 
   (spacemacs/toggle-mode-line-minor-modes-off)
-
-  ; Disable smart parens
-  (eval-after-load 'smartparens
-    '(progn
-       (sp-pair "(" nil :actions :rem)
-       (sp-pair "[" nil :actions :rem)
-       (sp-pair "'" nil :actions :rem)
-       (sp-pair "\"" nil :actions :rem)))
 
   ; YCMD
   (let ((ycmd-dir (expand-file-name "private/.ycmd/" user-emacs-directory)))
