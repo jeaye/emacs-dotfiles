@@ -298,7 +298,7 @@ layers configuration. You are free to put any user code."
 
     ; Pasting on OS X
     (setq evil-visual-update-x-selection 'ignore) 
-    (setq evil-search-highlight-persist nil)
+    (setq evil-search-highlight-persist nil) ; TODO: Not working
 
     ; Have ^w delete words when typing
     ; TODO: Function: redefin-key which binds nil then the value? Is it needed?
