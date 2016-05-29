@@ -344,9 +344,27 @@ layers configuration. You are free to put any user code."
       (message "YCMD already exists; not cloning"))
     (set-variable 'ycmd-server-command
                   (list "python" (concat ycmd-dir "ycmd/"))))
-  (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"))
+  (set-variable 'ycmd-extra-conf-whitelist '("~/projects/*"
+                                             "/Volumes/case-insensitive/*"))
   (setq ycmd-extra-conf-handler 'load)
-  (global-ycmd-mode)
+  (add-hook 'after-init-hook 'global-ycmd-mode)
+
+  ; C# completion
+  (let ((dir (expand-file-name "private/.omnisharp-server/" user-emacs-directory)))
+    (if (not (file-exists-p dir))
+        (progn
+          (message "Cloning and building Omnisharp...")
+          (shell-command (concat "git clone --recursive "
+                                 "https://github.com/OmniSharp/omnisharp-server.git"
+                                 dir
+                                 " && cd "
+                                 dir
+                                 " && xbuild /p:Configuration=Release"))
+          (message "done"))
+      (message "OmniSharp already exists; not cloning"))
+    ; XXX: libuv must be installed
+    (setq omnisharp-server-executable-path
+          (concat dir "OmniSharp/bin/Release/OmniSharp.exe")))
 
   ; Require new lines at the end of files
   (setq require-final-newline t)
