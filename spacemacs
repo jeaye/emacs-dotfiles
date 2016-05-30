@@ -257,11 +257,13 @@ layers configuration. You are free to put any user code."
   ;   org
   ;   tabs
   ;   helm - open in new tab
-  ;   diminish
   ;   unicode input
 
   ; Always follow symbolic links
   (setq vc-follow-symlinks t)
+
+  ; Have tab always indent
+  (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
 
   ; Wrap long lines
   (global-visual-line-mode 1)
